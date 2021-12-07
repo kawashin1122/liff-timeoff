@@ -68,8 +68,7 @@
 
         $(function () {
             $('form').submit(function () {
-                const nowTime = new Date();
-                //nowTime = nowTime.toLocaleString();
+                const nowTime = new Date().toLocaleString();
                 const name = $('input[name="name"]').val();
                 const day = $('input[name="day"]').val();
                 const time = $('input[name="time"]:checked').val();
