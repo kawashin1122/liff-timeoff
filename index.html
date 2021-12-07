@@ -2,14 +2,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【宮商】年休申請アプリの入力フォーム</title>
+    <title>【宮商】年休申請アプリ</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" >
 </head>
 <body>
-
     <form class="w-75 mx-auto">
         <p class="mt-3">①名前を入力してください</p>
         <div>
@@ -18,7 +17,7 @@
 
         <p class="mt-3">②年休取得日を選択してください</p>
         <div>
-            <input class="form-control w-100 mt-1" type="text" id="datepicker" name="day" >
+            <input class="form-control w-100 mt-1" type="text" id="datepicker" name="day" placeholder="ここをタップ" required>
         </div>
         
         <p class="mt-3">③時間帯を選択してください<br>
@@ -41,7 +40,11 @@
 
     <script>
         $(function() {
-          $("#datepicker").datepicker();
+            $.datetimepicker.setLocale('ja'); // 日本語化
+            $("#datepicker").datepicker();
+                timepicker:false, // 日付のみ表示
+                format:'Y/m/d', // フォーマットの指定
+            });
         });
 
         $(document).ready(function () {
@@ -79,16 +82,13 @@
                 const name = $('input[name="name"]').val();
                 const day = $('input[name="day"]').val();
                 const time = $('input[name="time"]:checked').val();
-                //const ans1 = $("input[name='ans1']:checked").parent().text();
-                
+                //const ans1 = $("input[name='ans1']:checked").parent().text();                
                 const msg = `${nowTime}\n${name}\n${day}\n${time}`;
                 sendText(msg);
 
                 return false;
             });
         });
-
     </script>
-
 </body>
 </html>
