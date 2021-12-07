@@ -52,11 +52,9 @@
     <script src="https://cdn.rawgit.com/jonthornton/jquery-timepicker/3e0b283a/jquery.timepicker.min.js"></script>
     <script>
         $(function() {
-            $("#datepicker").datepicker({
-                timepicker:false, // 日付のみ表示
-                format:'Y/m/d', // フォーマットの指定
-              });
-          });
+            $("#datepicker").datepicker();
+            $("#datepicker").datepicker("option", "dateFormat", 'yy/mm/dd');
+        });
 
         $(document).ready(function () {
             const liffId = "1656697860-vQZo4KR8";
