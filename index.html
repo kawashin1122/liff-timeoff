@@ -40,12 +40,11 @@
 
     <script>
         $(function() {
-            $.datetimepicker.setLocale('ja'); // 日本語化
-            $("#datepicker").datepicker();
+            $("#datepicker").datepicker({
                 timepicker:false, // 日付のみ表示
                 format:'Y/m/d', // フォーマットの指定
-            });
-        });
+              });
+          });
 
         $(document).ready(function () {
             const liffId = "1656697860-vQZo4KR8";
