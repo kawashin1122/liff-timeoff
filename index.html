@@ -17,7 +17,7 @@
 
         <p class="mt-3">②年休取得日を入力してください</p>
         <div>
-            <input class="form-control w-100 mt-1" name="day" placeholder=" (例) 7" required>
+            <input class="form-control w-100 mt-1" name="offday" placeholder=" (例) 2021/12/07" required>
         </div>
         
         <p class="mt-3">③時間帯を選択してください<br>
@@ -71,11 +71,11 @@
                 const nowTime = new Date();
                 //nowTime = nowTime.toLocaleString();
                 const name = $('input[name="name"]').val();
-                const day = $('select[name="day"]').val();
+                const offday = $('select[name="offday"]').val();
                 const time = $('input[name="time"]:checked').val();
                 //const ans1 = $("input[name='ans1']:checked").parent().text();
                 
-                const msg = `${nowTime}\n${name}\n${day}\n${time}`;
+                const msg = `${nowTime}\n${name}\n${offday}\n${time}`;
                 sendText(msg);
 
                 return false;
