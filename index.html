@@ -12,17 +12,17 @@
 </head>
 <body>
     <form class="w-75 mx-auto">
-        <p class="mt-3">① 名前を入力してください</p>
+        <p class="mt-3 font-weight-bold shadow">① 名前を入力してください</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="(例)宮商太郎" required>
         </div>
 
-        <p class="mt-3">② 年休取得日を選択してください</p>
+        <p class="mt-3 font-weight-bold shadow">② 年休取得日を選択してください</p>
         <div>
             <input class="form-control w-100 mt-1" type="text" id="datepicker" name="day" placeholder="ここをタップ" required>
         </div>
         
-        <p class="mt-3">③ 時間帯を選択してください<br>
+        <p class="mt-3 font-weight-bold shadow">③ 時間帯を選択してください<br>
             <label><input class="check" type="radio" name="time" value="終日" onclick="formSwitch()" checked>終日</label>
             <label><input class="check" type="radio" name="time" value="午前" onclick="formSwitch()" >午前</label>
             <label><input class="check" type="radio" name="time" value="午後" onclick="formSwitch()" >午後</label>
@@ -31,9 +31,9 @@
 
         <span id="jikan">
             <div class="selecter">
-                <p>④ 開始時間を選択してください</p>
+                <p class="mt-3 font-weight-bold shadow">④ 開始時間を選択してください</p>
                 <input type="text" class="timepicker form-control w-100 mt-1" data-time-format="H:i" name="start" placeholder="ここをタップ"/>
-            <p>⑤ 終了時間を選択してください</p>
+                <p class="mt-3 font-weight-bold shadow">⑤ 終了時間を選択してください</p>
                 <input type="text" class="timepicker form-control w-100 mt-1" data-time-format="H:i" name="end" placeholder="ここをタップ"/>
             </div>
         </span>
@@ -108,11 +108,8 @@
             'step': 5,
         });
 
-    </script>
-
-    <script>
-        var selecterBox = document.getElementById('jikan');
-        var selecter = document.getElementById('changeSelect');
+        const selecterBox = document.getElementById('jikan');
+        const selecter = document.getElementById('changeSelect');
 
         selecterBox.style.display = "none";
             function formSwitch() {
